@@ -45,15 +45,25 @@
                     <li>
                         <i class="fa-solid fa-sack-dollar"></i>
                     </li>
+                    <li>
+                        <button id="cart-button" class="cart-button" onclick="toggleCart()">stories (<span id="cartCounter">0</span>)</button>
+                    </li>
                 </ul>
             </section>
         </nav>
     </header>
     <main>
         <div class="card" id="card">
-            <p>HELLO ESAU</p>
+            <p>UserStoryHub</p>
             <section>
-                <p>"James 3:2"</p>
+                <p> manage and analyze your user stories and requirement documents</p>
+                <div>
+                    <button>
+                        <a href="#down"> user stories</a>
+                    </button>
+                    <button>
+                        <a href="#down">documents</a>
+                </div>
             </section>
         </div>
         <!-- Back to Top Button -->
@@ -62,9 +72,40 @@
         </button>
     </main>
     <div class="down" id="down">
-        <p>THE  PAGE IS VERY FUN</p>
-
-
+        <main>
+            <section>
+                <form action="">
+                    <div id="storypriority">
+                        <div>
+                            <label for="userStory"></label>
+                            <input type="text" id="userStory" name="userStory" placeholder="As a user , I want to">
+                        </div>
+                        <div>
+                            <label for="priority"></label><br>
+                            <select id="priority" name="priority" required>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="Storydescription">
+                        <label for="userStory"></label>
+                        <textarea id="description" name="description" placeholder="Describe your story"></textarea>
+                    </div>
+                    <div id="navigations">
+                        <button onclick="addStory()">Add</button>
+                    </div>
+                </form>
+            </section>
+            <div id="cartPopup" >
+                <h2>Your Stories</h2>
+                <ul id="storyList"></ul>
+                <p id="storyWarning" style="color: red; display: none;">Please add at least two stories before analyzing.</p>
+                <button onclick="submitStories()">Analyze All</button>
+                <button onclick="closeCart()">Close</button>
+            </div>
+        </main>
     </div>
     <script src="App/app.js"></script>
 </body>

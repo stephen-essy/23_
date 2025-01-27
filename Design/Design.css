@@ -69,6 +69,16 @@ nav section ul li #day {
   font-weight: bolder;
   display: none;
 }
+nav section ul li button {
+  background-color: #00ff99;
+  outline: none;
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+  display: none;
+  transition: opacity 0.3s ease, transform 0.6s ease;
+  cursor: pointer;
+}
 nav section ol {
   list-style: none;
   display: flex;
@@ -126,8 +136,37 @@ main #card blockquote {
   color: #f1f1f3;
 }
 main #card section p {
-  font-size: 20pt;
-  font-family: "Ga Maamli", sans-serif;
+  font-size: 12pt;
+  font-family: poppins;
+  margin: 15px;
+  font-weight: normal;
+}
+main #card section div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+main #card section div button {
+  background-color: #333;
+  color: #f1f1f3;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Inter", serif;
+  font-size: 12pt;
+  transition: 0.5s;
+}
+main #card section div button a {
+  text-decoration: none;
+  color: #f1f1f3;
+}
+main #card section div button:hover {
+  background-color: #ff6347;
+  font-weight: bolder;
 }
 main .card {
   --border-radius: 0.75rem;
@@ -179,8 +218,87 @@ main .card {
   margin-left: 30px;
   margin-right: 30px;
   border-radius: 20px;
-  -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(45px);
+          backdrop-filter: blur(45px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: unset;
+}
+#down main section form {
+  height: 8cm;
+  width: 10cm;
+  background-color: #333;
+  color: #f1f1f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#down main section form #storypriority {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+#down main section form #storypriority input {
+  color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "poppins", serif;
+  font-size: 12pt;
+  transition: 0.5s;
+}
+#down main section form #storypriority select {
+  color: #333;
+  border: none;
+  padding: 10px;
+  top: -0.3cm;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "poppins", serif;
+  font-size: 12pt;
+  transition: 0.5s;
+}
+#down main section form #Storydescription {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+#down main section form #Storydescription textarea {
+  height: 2cm;
+  width: 8.9cm;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  border-radius: 10px;
+  border-color: none;
+  font-size: 12pt;
+}
+#down main section form #navigations button {
+  background-color: #f1f1f3;
+  color: #333;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Poppins", serif;
+  font-size: 12pt;
+  transition: 0.5s;
+  width: 3cm;
+}
+#down main section form #navigations button:hover {
+  background-color: #ff6347;
+  font-weight: bolder;
 }
 
 .back-to-top {
@@ -211,8 +329,52 @@ main .card {
   transform: scale(1);
 }
 
+.cart-button.show {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.7s ease, transform 0.5s ease;
+  transform: scale(1);
+}
+
 #down_arrow {
   display: none;
+}
+
+#cartPopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 8cm;
+  width: 15cm;
+  background: #f1f1f3;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#cartPopup button {
+  background-color: #00ff99;
+  color: #000;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  height: 1cm;
+  padding: 10px;
+  border-radius: 5px;
+}
+#cartPopup ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#cartPopup ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
 }
 
 @keyframes pulseGlow {
